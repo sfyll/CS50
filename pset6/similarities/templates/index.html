@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col">
+        <form action="/compare" enctype="multipart/form-data" method="post">
+            <div class ="form-group">
+                <label for="file1">Input file1 here</label>
+                <input type="file" class="form-control-file" name="file1">
+            </div>
+            <div class ="form-group">
+                <label for="file2">Input file2 here</label>
+                <input type="file" class="form-control-file" name="file2">
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="algorithm" value= lines <checked>
+                <label class="form-check-label">
+                    compare lines
+               </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="algorithm" value= sentences <checked>
+                <label class="form-check-label">
+                    compare sentences
+               </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="algorithm" value= substrings <checked>
+                <label class="form-check-label">
+                    compare substring
+                <input class="form-control form-control-sm" min="1" name="length" placeholder="of length n" type="number">
+               </label>
+            </div>
+            <button class="btn btn-default" type="submit">Compare</button>
+            <!--
+            add a form:
+            make sure form sends correctly encoded PSOT requiest to / compare
+            inside of form let user choose two files : files 1 and files 2 in addition to choose an algorithm(if the user choose to compare by substring, let the user
+            specify a lenght n
+            add a button that let's the user submit the form
+
+            in between the form tag will be all of the input fields, the places where the users can input the information that they want to send when they
+            submit the form, which will be created by:
+            using <input> tags
+            give each input tag a name attribute (so that web app is able to look at input fields based on their name and extract what their value are)
+                        file1, file2, algorithm, lenght
+            type attribute : ex, file, radio(when user can select various choice), number
+            algorithm will need a sub tag given which attribute is choosen : lines, sentences, substrings
+            submit button at the bottom
+            -->
+
+        </form>
+    </div>
+
+{% endblock %}
